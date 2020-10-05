@@ -1,0 +1,28 @@
+/* myStyle.css */
+
+body {
+ background-color: ##F7F4EB;
+ color:black;
+}
+h1 {
+ color: #pink;
+ text-align: center;
+ font-family: 'Sofia';font-size: 32px;
+}
+h2 {
+  color: #pink;
+  text-align: left;
+  font-family:"Courier New", Courier, monospace;font-size: 24px;
+}
+p {
+ background-color: #E2DFD0;
+ color: #grey;
+ text-align: left;
+ border:2px groove#D6D3C6 ;
+}
+
+span.pinkcolor{
+        color:pink;
+        font-family:courier;
+        font-size:20px;
+    }
