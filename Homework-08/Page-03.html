@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title> Page-03 </title>
+<head>
+  <script>
+  function checkform()
+  {
+var name;
+name = document.getElementById("txtName").value;
+if(name == "")
+
+{document.getElementById("txtname").style.backgroundColor = "red";
+document.getElementById("txtName").focus();
+}
+else
+{
+  document.getElementById("txtname").style.backgroundColor = "white";
+
+
+}
+
+window.alert("Name is required.);
+
+  }
+   console.log("I am in the console!");
+              document.write("HI");
+          </script>
+
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <span id="myTag">This is my favorite text</span>
+
+    <h1 style="color:pink; text-align:center;">Contact Us</h1>
+
+    <form action="nextPage.html" type="Post">
+   <h3 style="color:#F08080;text-align:left;">Please fill out the following.</h3>
+           First Name: <input type="text" id="fName"><br>
+           Last Name: <input type="text" id="lName"><br>
+           E-Mail: <input type="text" id="E-Mail"><br>
+           <p> Do you agree to let our company store this data you have provided above?</p>
+           <button id="mySubmit" type="Yes">Yes</button> <button id="mySubmit" type="No">No</button>
+<br> </br>
+           <a href="Homepage.html">Homepage</a>
+<table>
+<tr>
+<td colspan="2"><button id= "btnSubmit" onClick="checkform();">Submit</button></td>
+</tr>
+  </body>
+</html>
