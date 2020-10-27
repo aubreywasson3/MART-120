@@ -48,4 +48,6 @@ function draw()
 
     fill(120);
     textSize(24);
+
     text("Aubrey Wasson",380,700 );
+  }
