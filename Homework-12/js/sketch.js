@@ -1,4 +1,9 @@
 // x and y for my character
+function setup()
+{
+    createCanvas(600,800);
+}
+
 var ballRadius = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
@@ -10,8 +15,12 @@ var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
 
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("mousemove", mouseMoveHandler, false);
+
 // call createBorders Function
-createBorders();
+createBorders(12);
 
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
@@ -79,17 +88,48 @@ function draw() {
     y += dy;
 }
 
+}
+function collisionDetection() {
+  for(var c=0; c<brickColumnCount; c++) {
+    for(var r=0; r<brickRowCount; r++) {
+      var b = bricks[c][r];
+      if(b.status == 1) {
+        if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+          dy = -dy;
+          b.status = 0;
+          score++;
+          if(score == brickRowCount*brickColumnCount) {
+            alert("YOU WIN, CONGRATS!");
+            document.location.reload();
+            clearInterval(interval);
+          }
+
+          lives--;
+          if(!lives) {
+              alert("GAME OVER");
+              document.location.reload();
+              clearInterval(interval); // Needed for Chrome to end game
+          }
+          else {
+              x = canvas.width/2;
+              y = canvas.height-30;
+              dx = 2;
+              dy = -2;
+              paddleX = (canvas.width-paddleWidth)/2;
+          }
+
+
 var interval = setInterval(draw, 10);
 
-function createBorders()
+function createBorders(thickness)
 {
     // top border
-    rect(2,3,width,thickness);
+    rect(0,0,width,thickness);
     // left border
-    rect(2,3,thickness,height);
+    rect(0,0,thickness,height);
     // bottom border
-    rect(3, height-thickness,width, thickness);
+    rect(0, height-thickness,width, thickness);
     // right upper border
-    rect(width-thickness,3,thickness,height-50);
+    rect(width-thickness,0,thickness,height-50);
 }
 */
